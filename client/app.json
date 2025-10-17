@@ -4,7 +4,7 @@
     "slug": "ttt-easy-sqlite3",
     "sdkVersion": "51.0.0",
     "extra": {
-      "wsUrl": "ws://localhost:8080"
+      "wsUrl": "https://tic-tac-toe-multiplayer-ug7u.onrender.com"
     }
   }
 }
