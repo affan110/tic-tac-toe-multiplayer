@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, Text, TouchableOpacity, TextInput, StyleSheet, ActivityIndicator, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 
-const WS_URL = Constants.expoConfig.extra.wsUrl;
+const WS_URL = 
+  process.env.NODE_ENV === 'production'
+    ? 'wss://tic-tac-toe-multiplayer-ug7u.onrender.com'
+    : 'ws://localhost:8080';
+
 
 export default function App() {
   const [ws, setWs] = useState(null);
@@ -58,7 +62,12 @@ export default function App() {
 
   const fetchLeaderboard = async () => {
     try {
-      const res = await fetch('http://localhost:8080/leaderboard');
+      const API_URL = 
+        process.env.NODE_ENV === 'production'
+          ? 'https://tic-tac-toe-multiplayer-ug7u.onrender.com'
+          : 'http://localhost:8080';
+
+      const res = await fetch(`${API_URL}/leaderboard`);
       const data = await res.json();
       setLeaderboard(data);
       setShowLeaderboard(true);
