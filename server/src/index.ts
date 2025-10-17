@@ -8,7 +8,12 @@ import { open } from 'sqlite';
 
 const PORT = process.env.PORT || 8080;
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: '*', // allow all origins
+    methods: ['GET', 'POST', 'OPTIONS'],
+  })
+);
 app.use(express.json());
 
 //  Database setup
