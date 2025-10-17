@@ -1,0 +1,17 @@
+# Node dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build output
+dist/
+build/
+
+# OS files
+.DS_Store
+
+# Env files
+.env
+
+# SQLite database (auto-created by server)
+server/leaderboard.db

@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "TTT Multiplayer Easy (SQLite3)",
+    "slug": "ttt-easy-sqlite3",
+    "sdkVersion": "51.0.0",
+    "extra": {
+      "wsUrl": "ws://localhost:8080"
+    }
+  }
+}
